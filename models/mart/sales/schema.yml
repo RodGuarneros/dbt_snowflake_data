@@ -16,10 +16,10 @@ models:
         data_tests:
           - not_null
 
-  - name: dim_saleperson
+  - name: dim_salesperson
     description: "Dimensión de vendedores."
     columns:
-      - name: ID_SALEPERSON
+      - name: ID_SALESPERSON
         description: "Clave subrogada única para cada vendedor."
         data_tests:
           - unique
@@ -38,7 +38,7 @@ models:
         data_tests:
           - not_null
 
-      - name: ID_SALEPERSON
+      - name: ID_SALESPERSON
         description: "Clave foránea a la dimensión de vendedores."
         data_tests:
           - not_null
