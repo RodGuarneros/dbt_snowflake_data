@@ -16,7 +16,9 @@ models:
     columns:
 
       - name: ID_CARMAKE
-        description: "Clave subrogada única para cada marca."
+        description: >
+          Clave subrogada única para
+          cada marca de vehículo.
         data_tests:
           - unique
           - not_null
@@ -40,12 +42,14 @@ models:
     columns:
 
       - name: ID_SALESPERSON
-        description: "Clave subrogada única del vendedor."
+        description: >
+          Clave subrogada única
+          para cada vendedor.
         data_tests:
           - unique
           - not_null
 
-      - name: SALEPERSON
+      - name: SALESPERSON
         description: "Nombre del vendedor."
         data_tests:
           - not_null
@@ -57,21 +61,27 @@ models:
 
   - name: fct_monthly_sales
     description: >
-      Tabla de hechos que consolida las ventas
-      mensuales por vendedor y marca de vehículo.
-      Incluye ventas totales y comisiones.
+      Tabla de hechos que consolida las
+      ventas mensuales por vendedor y
+      marca de vehículo. Incluye ventas
+      totales y comisiones.
 
     columns:
 
       - name: DDATE
-        description: "Primer día del mes de la venta."
+        description: >
+          Fecha correspondiente al primer
+          día del mes de la venta.
         data_tests:
           - not_null
 
       # CLAVE FORÁNEA: VENDEDOR
 
       - name: ID_SALESPERSON
-        description: "Clave foránea a la dimensión de vendedores."
+        description: >
+          Clave foránea que relaciona
+          las ventas con la dimensión
+          de vendedores.
         data_tests:
           - not_null
           - relationships:
@@ -82,7 +92,10 @@ models:
       # CLAVE FORÁNEA: MARCA
 
       - name: ID_CARMAKE
-        description: "Clave foránea a la dimensión de marcas."
+        description: >
+          Clave foránea que relaciona
+          las ventas con la dimensión
+          de marcas.
         data_tests:
           - not_null
           - relationships:
@@ -94,10 +107,11 @@ models:
 
       - name: TOTAL_SALES
         description: >
-          Monto total de ventas netas por mes,
-          vendedor y marca.
+          Monto total de ventas netas
+          por mes, vendedor y marca.
 
       - name: TOTAL_COMMISSIONS
         description: >
-          Monto total de comisiones generadas
-          por mes, vendedor y marca.
+          Monto total de comisiones
+          generadas por mes, vendedor
+          y marca.
