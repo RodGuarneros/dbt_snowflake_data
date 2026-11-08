@@ -1,0 +1,31 @@
+version: 2
+
+sources: 
+  - name: raw_bi_car
+    database: MEDICINA
+    schema: PUBLIC
+    tables: 
+      - name: AUTOS
+        description: "Tablas de venta de datos desde la DB transaccional"
+        columns:
+          - name: DDATE
+            description: "Fecha del compra del auto"
+          - name: SALESPERSON
+            description: "Persona que vendió"
+            tests: 
+              - not_null
+          - name: CUSTOMENAME
+            description: "Nombre del cliente"
+          - name: CARMAKE
+            description: "Nombre de la marca del auto"
+          - name: CARMODEL
+            description: "Nombre del modelo del auto"
+          - name: CARYEAR
+            description: "Año modelo del auto"
+          - name: SALEPRICE
+            description: "Precio del auto"
+          - name: COMMISSIONRATE
+            description: "% de Comisión del vendedor"
+          - name: COMMISSIONEARNED
+            description: "Valor de la comisión del automóvil"
+               
