@@ -15,18 +15,26 @@ models:
 
     columns:
 
-      - name: ID_CARMAKE
-        description: >
-          Clave subrogada única para
-          cada marca de vehículo.
-        data_tests:
-          - unique
-          - not_null
 
       - name: CARMAKE
         description: "Nombre de la marca del vehículo."
         data_tests:
           - not_null
+          - accepted_values:
+              arguments:
+                values:
+                  - Toyota
+                  - Honda
+                  - Ford
+                  - Chevrolet
+                  - BMW
+                  - Nissan
+                  - Mercedes-Benz
+                  - Audi
+                  - Volkswagen
+              config:
+                severity: error
+
 
 
   # ==========================================
