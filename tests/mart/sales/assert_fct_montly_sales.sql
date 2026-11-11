@@ -1,0 +1,10 @@
+SELECT 
+    DDATE,
+    ID_SALESPERSON,
+    ID_CARMAKE,
+    TOTAL_SALES,
+    TOTAL_COMMISSIONS
+FROM 
+    {{ref('fct_monthly_sales')}}
+WHERE 
+    TOTAL_SALES < 0 OR TOTAL_COMMISSIONS < 0 
