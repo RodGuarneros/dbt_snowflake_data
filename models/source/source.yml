@@ -1,31 +1,26 @@
 version: 2
 
 sources: 
-  - name: raw_bi_car
-    database: MEDICINA
+  - name: raw_bi_currency
+    database: CROSS_CURRENCY
     schema: PUBLIC
     tables: 
-      - name: AUTOS
-        description: "Tablas de venta de datos desde la DB transaccional"
+      - name: TRANSACTIONS
+        description: "Cross-currency operations by Wise (selected period)"
         columns:
-          - name: DDATE
-            description: "Fecha del compra del auto"
-          - name: SALESPERSON
-            description: "Persona que vendió"
+          - name: TXN_ID
+            description: "Transaction ID (PK)"
+          - name: TXN_DATE
+            description: "Transaction date"
             tests: 
               - not_null
-          - name: CUSTOMENAME
-            description: "Nombre del cliente"
-          - name: CARMAKE
-            description: "Nombre de la marca del auto"
-          - name: CARMODEL
-            description: "Nombre del modelo del auto"
-          - name: CARYEAR
-            description: "Año modelo del auto"
-          - name: SALEPRICE
-            description: "Precio del auto"
-          - name: COMMISSIONRATE
-            description: "% de Comisión del vendedor"
-          - name: COMMISSIONEARNED
-            description: "Valor de la comisión del automóvil"
-               
+          - name: STATUS
+            description: "Status of the transaction"
+          - name: SEND_CURRENCY 
+            description: "The origin of the digital operation (ISO abbreviation)"
+          - name: RECEIVED CURRENCY
+            description: "The destination of the digital operation (ISO abbreviation)"
+          - name: CUSTOMER_ID
+            description: "ID of the responsible of the operation (FK)"
+          - name: AMOUNT_GBP
+            description: "Total amount of the operation in Grate Britain Pound"
